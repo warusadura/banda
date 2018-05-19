@@ -2,4 +2,5 @@
 
 import os
 
-path = os.getcwd() + "/geckodriver"
+def getPath():
+    return os.getcwd() + "/geckodriver"
