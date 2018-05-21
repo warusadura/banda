@@ -3,7 +3,7 @@
 from threading import Thread
 from flask import Flask, render_template
 from selenium import webdriver
-from driver import getPath, no_script
+from driver import getPath, get_profile
 
 def banda_server():
     app = Flask(__name__)
@@ -19,7 +19,7 @@ def banda_server():
     app.run(threaded=True)
 
 def banda_ui():
-    ui = webdriver.Firefox(executable_path=getPath(), no_script())
+    ui = webdriver.Firefox(get_profile(), executable_path=getPath())
     ui.get("http://localhost:5000")
 
 def main():

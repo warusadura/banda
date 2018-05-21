@@ -1,0 +1,152 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/*This style will make your browser similar to Safari.  Currently tested on MacOS Sierra and Linux on Nightly*/
+
+/*tabs on bottom*/
+#TabsToolbar {
+  -moz-box-ordinal-group: 3;
+}
+#nav-bar{
+  border-top-width: 0px !important;
+}
+#TabsToolbar .tabbrowser-tabs {
+  height: 18px !important;
+  border-bottom: 1px solid #B1B1B1 !important;
+}
+
+/*tab line hidden*/
+.tab-line {
+  display: none !important;
+}
+
+/*Bookmarks Bar fix*/
+#PersonalToolbar {
+  -moz-box-ordinal-group: 2;
+  background: rgb(220, 220, 220) !important;
+  border-bottom: 1px solid #B1B1B1 !important;
+}
+
+/*Remove extra tab bar space*/
+#TabsToolbar {
+  padding-inline-start: 0px !important;
+  margin-bottom: none !important;
+}
+
+.titlebar-placeholder {
+  display: none;
+}
+
+/*full-width tabs*/
+#TabsToolbar .tabbrowser-tab[fadein]:not([pinned]) {
+  flex-grow: 1 !important;
+  min-width: 11em !important;
+  max-width: 100% !important;
+}
+
+#TabsToolbar {
+  box-shadow: inset 0px 1px 0px 0px rgb(162,160,162), inset 0px -1px 0px 0px rgb(162,160,162) !important;
+  margin-bottom: 0px !important;
+  margin-left: 0px !important;
+  margin-right: -1px !important;
+  background: linear-gradient(to bottom, rgb(192,190,192),rgb(187,185,187)) !important;
+}
+
+/*Hide and show close tab button*/
+#TabsToolbar .tab-close-button {
+  -moz-box-ordinal-group: 1 !important;
+  margin-left: -5.5px !important;
+  border-radius: 2px !important;
+  transition: opacity 200ms !important;
+    /* small x */
+  list-style-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">\<line x1="4.5" y1="4.5" x2="11.5" y2="11.5" stroke="rgb(84,82,84)" stroke-width="1"/>\<line x1="4.5" y1="11.5" x2="11.5" y2="4.5" stroke="rgb(84,82,84)" stroke-width="1"/>\</svg>') !important;
+}
+
+@media (max-resolution: 1.9dppx) {
+  #TabsToolbar .tab-close-button {
+    list-style-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">\<line x1="4.5" y1="4.5" x2="11.5" y2="11.5" stroke="rgb(84,82,84)" stroke-width="1.5"/>\<line x1="4.5" y1="11.5" x2="11.5" y2="4.5" stroke="rgb(84,82,84)" stroke-width="1.5"/>\</svg>') !important;
+  }
+}
+
+#TabsToolbar tab:not(:hover) .tab-close-button {
+  opacity: 0 !important;
+}
+
+#TabsToolbar tab:hover .tab-close-button {
+  opacity: 1 !important;
+}
+
+#TabsToolbar tab .close-icon {
+  -moz-image-region: unset !important;
+}
+
+#TabsToolbar tab .close-icon:hover {
+  -moz-image-region: unset !important;
+  background-color: rgba(0,0,0,0.1) !important;
+  background-clip: padding-box !important;
+}
+
+#TabsToolbar tab .close-icon:hover:active {
+  background-color: rgba(0,0,0,0.15) !important;
+}
+
+/*Heights*/
+
+/*
+ * Change the last padding value to 5px for Windows, Linux, or if 
+ * you're using the titlebar
+ */
+#nav-bar {
+  height: 38px !important;
+  padding: 0px 5px 0px 75px !important;
+}
+#tabbrowser-tabs {
+  margin-left: 0px !important;
+  height: 24px !important;
+}
+#TabsToolbar .tab-content > * {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+/*Colors*/
+#nav-bar {
+  background: linear-gradient(rgb(230, 230, 230), rgb(220, 220, 220)) !important;
+  border-bottom: 1px solid #B1B1B1 !important;
+}
+#TabsToolbar {
+  background: #BCBCBC !important;
+}
+.tab-background[selected="true"] {
+    background-attachment: none !important;
+    background-color: rgb(220, 220, 220) !important;
+    background-image: none !important;
+}
+#urlbar {
+  background: #FAFAFA !important;
+  border: 1px solid rgba(0,0,0,0.5);
+}
+
+/*Hide Favicons, center text*/
+.tabbrowser-tabs .tab-icon-image {
+  display: none !important;
+}
+.tabbrowser-tab[pinned]:not([busy="true"]) .tab-icon-image {
+  display: block !important;
+}
+.tab-label {
+  -moz-box-flex: 1 !important;
+  text-align: center !important;
+}
+
+/*position window controls*/
+#titlebar-buttonbox-container {
+  margin-left: 5px !important;
+  margin-top: 10.5px !important;
+}
+
+/* remove this weird extra separator mozilla tacks on before the page content */
+#navigator-toolbox::after {
+  display: none !important;
+}

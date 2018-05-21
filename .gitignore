@@ -2,3 +2,4 @@ venv
 geckodriver.log
 __pycache__
 *swp
+temp.txt
