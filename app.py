@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 from threading import Thread
-from flask import Flask
+from flask import Flask, render_template
 from selenium import webdriver
 from driver import getPath
 
@@ -10,7 +10,7 @@ def banda_server():
 
     @app.route("/")
     def index():
-        return "<h2>hello</h2>"
+        return render_template("index.html")
 
     @app.route("/user/<name>")
     def user(name):
