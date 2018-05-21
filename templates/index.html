@@ -1,10 +1,16 @@
 <!DOCTYPE>
 <html>
   <head>
-    <title>banda</title>
+    <title>home</title>
   </head>
 
   <body>
-    <p>hello world</p>  
+    <ul>
+      {% for article in articles %}
+
+        <li>{{ article.title }}</li>
+
+      {% endfor %}
+    </ul>
   </body>
 </html>
