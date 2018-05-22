@@ -2,15 +2,29 @@
 <html>
   <head>
     <title>home</title>
+    <link href="{{ url_for('static', filename='semantic.min.css') }}"
+    rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='styles.css') }}"
+    rel="stylesheet"/>
   </head>
 
   <body>
-    <ul>
-      {% for article in articles %}
+    <br>
+    <br>
 
-        <li>{{ article.title }}</li>
+    <div class="ui text container">
+      <h1 class="ui dividing header">your feeds</h1>
+      <ul>
+        {% for article in articles %}
+          <div class="ui raised segment">
+            <h4 class="ui header"><a href="{{ article.link }}">
+                {{ article.title }}
+            </h4>
+            <p>{{ article.description }}</p>
+          </div>
+        {% endfor %}
+      </ul>
+    </div>
 
-      {% endfor %}
-    </ul>
   </body>
 </html>

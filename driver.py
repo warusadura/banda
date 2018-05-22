@@ -14,7 +14,7 @@ def create_profile():
     profile = webdriver.FirefoxProfile(profile_directory=profile_path)
     
     # remove javascript
-    #profile.set_preference("javascript.enabled", False)
+    profile.set_preference("javascript.enabled", False)
     # remove title bar
     profile.set_preference("browser.tabs.drawInTitlebar", True)
     return profile
