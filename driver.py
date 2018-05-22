@@ -7,15 +7,21 @@ from selenium.webdriver.firefox.options import Options, FirefoxProfile
 def getPath():
     return os.getcwd() + "/geckodriver"
 
-def create_profile():
+def profile():
     profile_path = os.getcwd() + "/profile"
     #options = Options()
-    profile = webdriver.FirefoxProfile(profile_directory=profile_path)
+    firefox = webdriver.FirefoxProfile(profile_directory=profile_path)
     #options.add_argument("-profile")
     #options.add_argument(profile_path)
     
     # remove javascript
-    profile.set_preference("javascript.enabled", False)
+    firefox.set_preference("javascript.enabled", 0)
     # remove title bar
-    profile.set_preference("browser.tabs.drawInTitlebar", True)
-    return profile
+    firefox.set_preference("browser.tabs.drawInTitlebar", True)
+    firefox.set_preference("browser.privatebrowsing.autostart", True)
+    firefox.set_preference("geo.enabled", False)
+    firefox.set_preference("reader.parse-on-load.force-enabled", True)
+    firefox.set_preference("reader.color_scheme", "light")
+    firefox.set_preference("browser.reader.detectedFirstArticle", False)
+    firefox.set_preference("extensions.pocket.enabled", False)
+    return firefox

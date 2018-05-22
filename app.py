@@ -1,26 +1,30 @@
 #! /usr/bin/env python3
 
+from os import getcwd 
 from threading import Thread
 from flask import Flask, render_template
 from selenium import webdriver
-from driver import getPath, create_profile
+from driver import getPath, profile
+from rss import get_articles 
 
 def banda_server():
     app = Flask(__name__)
 
     @app.route("/")
     def index():
-        return render_template("index.html")
+        return render_template("index.html", articles=get_articles())
 
-    @app.route("/user/<name>")
-    def user(name):
-        return "<h2>hello {}</h2>".format(name)
+    @app.route("/test")
+    def user():
+        return render_template("temp.html")
 
     app.run(threaded=True)
 
 def banda_ui():
-    ui = webdriver.Firefox(create_profile(), executable_path=getPath())
-    ui.get("http://localhost:5000")
+    ui = webdriver.Firefox(firefox_profile=profile(),
+            executable_path=getPath())
+    #ui.refresh()
+    ui.get("http://localhost:5000/test")
 
 def main():
     server_thread = Thread(target=banda_server)
