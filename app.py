@@ -24,7 +24,7 @@ def banda_ui():
     ui = webdriver.Firefox(firefox_profile=profile(),
             executable_path=getPath())
     #ui.refresh()
-    ui.get("http://localhost:5000/test")
+    ui.get("http://localhost:5000")
 
 def main():
     server_thread = Thread(target=banda_server)
