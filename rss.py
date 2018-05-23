@@ -3,20 +3,33 @@
 from urllib import request
 from bs4 import BeautifulSoup
 
-url = "https://www.wired.com/feed/category/security/latest/rss"
-with request.urlopen(url) as rss:
-    data = BeautifulSoup(rss, "xml")
+feeds = [
+        "https://www.wired.com/feed/category/security/latest/rss",
+        "https://news.ycombinator.com/rss",
+        ]
 
-raw_articles = data.find_all("item")
-articles = []
+def pickup():
+    # create individual articles
+    rss_data = []
+    for feed in feeds:
+        with request.urlopen(feed) as rss:
+            data = BeautifulSoup(rss, "xml")
+            rss_data.append(data)
 
-for article in raw_articles:
-    item = {
+    raw_articles = []
+    for source in rss_data:
+        raw_articles.extend(source.find_all("item"))
+
+    articles = []
+    state = False
+    for article in raw_articles:
+        if article.comments:
+            state = True
+        item = {
             "title": article.title.string,
             "description": article.description.string,
-            "link": article.link.string
+            "link": article.link.string,
+            "comments": article.comments.string if state else ""
             }
-    articles.append(item)
-
-def get_articles():
+        articles.append(item)
     return articles

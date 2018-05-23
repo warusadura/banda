@@ -5,14 +5,14 @@ from threading import Thread
 from flask import Flask, render_template
 from selenium import webdriver
 from driver import getPath, profile
-from rss import get_articles 
+from rss import pickup
 
 def banda_server():
     app = Flask(__name__)
 
     @app.route("/")
     def index():
-        return render_template("index.html", articles=get_articles())
+        return render_template("index.html", articles=pickup())
 
     @app.route("/test")
     def user():
