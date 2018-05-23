@@ -15,13 +15,13 @@ def profile():
     #options.add_argument(profile_path)
     
     # remove javascript
-    firefox.set_preference("javascript.enabled", 0)
+    #firefox.set_preference("javascript.enabled", 0)
     # remove title bar
-    firefox.set_preference("browser.tabs.drawInTitlebar", True)
-    firefox.set_preference("browser.privatebrowsing.autostart", True)
-    firefox.set_preference("geo.enabled", False)
-    firefox.set_preference("reader.parse-on-load.force-enabled", True)
-    firefox.set_preference("reader.color_scheme", "light")
-    firefox.set_preference("browser.reader.detectedFirstArticle", False)
-    firefox.set_preference("extensions.pocket.enabled", False)
+    #firefox.set_preference("browser.tabs.drawInTitlebar", True)
+    #firefox.set_preference("browser.privatebrowsing.autostart", True)
+    #firefox.set_preference("geo.enabled", False)
+    #firefox.set_preference("reader.parse-on-load.force-enabled", True)
+    #firefox.set_preference("reader.color_scheme", "light")
+    #firefox.set_preference("browser.reader.detectedFirstArticle", False)
+    #firefox.set_preference("extensions.pocket.enabled", False)
     return firefox
