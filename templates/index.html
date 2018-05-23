@@ -19,8 +19,12 @@
       <ul>
         {% for article in articles %}
           <div class="ui raised segment">
+            {% if article.comments %}
+            <h4 class="ui header"><a href="{{ article.comments }}">
+                {{ article.title }}</a></h4>
+            {% endif %}
             <h4 class="ui header"><a href="{{ article.link }}">
-                {{ article.title }}
+                {{ article.title }}</a>
             </h4>
             <p>{{ article.description }}</p>
           </div>
