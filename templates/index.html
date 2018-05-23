@@ -16,21 +16,33 @@
         setup</a>
       <br>
       <h1 class="ui dividing header">your feeds</h1>
-      <ul>
+      <div class="ui feed">
         {% for article in articles %}
-          <div class="ui raised segment">
             {% if article.comments %}
-              <h4 class="ui header"><a href="{{ article.comments }}">
-                  {{ article.title }}</a></h4>
+              <div class="event">
+                <div class="content">
+                  <div class="summary">
+                    <a href="{{ article.comments }}">
+                      {{ article.title }}</a>
+                  </div>
+                </div>
+              </div>
             {% else %}
-              <h4 class="ui header"><a href="{{ article.link }}">
-                  {{ article.title }}</a>
-              </h4>
-              <p>{{ article.description }}</p>
+              <div class="event">
+                <div class="content">
+                  <div class="summary">
+                    <a href="{{ article.link }}">
+                      {{ article.title }}</a>
+                  </div>
+                  <div class="">
+                    <p>{{ article.description }}</p>
+                  </div>
+                <div>
+              </div>
             {% endif %}
-          </div>
         {% endfor %}
-      </ul>
+      </div>
+      <br>
     </div>
 
   </body>
