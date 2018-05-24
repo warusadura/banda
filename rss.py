@@ -6,8 +6,15 @@ from bs4 import BeautifulSoup
 feeds = [
         "https://news.ycombinator.com/rss",
         "https://www.wired.com/feed/category/security/latest/rss",
-        "https://hackernoon.com/feed"
+        "https://hackernoon.com/feed",
+        "https://arstechnica.com/feed/",
         ]
+
+def reddit():
+    # identify reddit rss feeds
+    # https://old.reddit.com/r/cscareerquestions+Python/hot/.rss
+    isreddit = False
+ 
 
 def pickup():
     # create individual articles
@@ -22,7 +29,7 @@ def pickup():
         raw_articles.extend(source.find_all("item"))
 
     articles = []
-    #state = True
+    state = True
     for article in raw_articles:
         if article.comments is None:
             state = False
@@ -33,5 +40,5 @@ def pickup():
             "comments": article.comments.string if state else None
             }
         articles.append(item)
-    print(articles)
+   # print(articles)
     return articles
