@@ -4,8 +4,9 @@ from urllib import request
 from bs4 import BeautifulSoup
 
 feeds = [
-        "https://www.wired.com/feed/category/security/latest/rss",
         "https://news.ycombinator.com/rss",
+        "https://www.wired.com/feed/category/security/latest/rss",
+        "https://hackernoon.com/feed"
         ]
 
 def pickup():
@@ -21,15 +22,16 @@ def pickup():
         raw_articles.extend(source.find_all("item"))
 
     articles = []
-    state = False
+    #state = True
     for article in raw_articles:
-        if article.comments:
-            state = True
+        if article.comments is None:
+            state = False
+
         item = {
             "title": article.title.string,
-            "description": article.description.string,
             "link": article.link.string,
-            "comments": article.comments.string if state else ""
+            "comments": article.comments.string if state else None
             }
         articles.append(item)
+    print(articles)
     return articles

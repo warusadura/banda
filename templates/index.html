@@ -14,9 +14,8 @@
       <br>
       <a href="about:config" class="ui right floated button" target="_top">
         setup</a>
-      <br>
       <h1 class="ui dividing header">your feeds</h1>
-      <div class="ui feed">
+      <div class="ui small feed">
         {% for article in articles %}
             {% if article.comments %}
               <div class="event">
@@ -33,9 +32,6 @@
                   <div class="summary">
                     <a href="{{ article.link }}">
                       {{ article.title }}</a>
-                  </div>
-                  <div class="">
-                    <p>{{ article.description }}</p>
                   </div>
                 <div>
               </div>
