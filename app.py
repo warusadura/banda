@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
-
-from os import getcwd 
+ 
 from threading import Thread
 from flask import Flask, render_template
 from selenium import webdriver
@@ -21,7 +20,9 @@ def banda_server():
     app.run(threaded=True)
 
 def banda_ui():
-    ui = webdriver.Firefox(firefox_profile=profile(),
+    ui = webdriver.Firefox(options=profile()[0],
+            capabilities=profile()[1],
+            firefox_profile=profile()[2],
             executable_path=getPath())
     #ui.refresh()
     ui.get("http://localhost:5000")
