@@ -38,15 +38,18 @@ def pickup():
 
     articles = []
     state = True
+    hackernews = True
     for article in raw_articles:
         if article.comments is None:
             state = False
+            hackernews = False
 
         item = {
             "title": article.title.string,
             "link": article.link.string,
             "comments": article.comments.string if state else None,
-            "source": identify(article.link.string)
+            "source": "hackernews" if hackernews else
+            identify(article.link.string)
             }
         articles.append(item)
    # print(articles)
