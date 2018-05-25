@@ -8,7 +8,8 @@ feeds = [
         "https://news.ycombinator.com/rss",
         "https://www.wired.com/feed/category/security/latest/rss",
         "https://hackernoon.com/feed",
-        "https://arstechnica.com/feed/",
+        "https://theintercept.com/feed/?lang=en",
+        "http://feeds.feedburner.com/d0od",
         ]
 
 def identify(url):
