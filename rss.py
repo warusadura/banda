@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 
 from urllib import request
+from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 
 feeds = [
@@ -9,6 +10,13 @@ feeds = [
         "https://hackernoon.com/feed",
         "https://arstechnica.com/feed/",
         ]
+
+def identify(url):
+    # identify rss source
+    host = urlparse(url).hostname
+    if len(host.split(".")) == 3:
+        return host.split(".")[1]
+    return host.split(".")[0]
 
 def reddit():
     # identify reddit rss feeds
@@ -37,7 +45,8 @@ def pickup():
         item = {
             "title": article.title.string,
             "link": article.link.string,
-            "comments": article.comments.string if state else None
+            "comments": article.comments.string if state else None,
+            "source": identify(article.link.string)
             }
         articles.append(item)
    # print(articles)

@@ -17,6 +17,7 @@
       <div class="ui small feed">
         {% for article in articles %}
             {% if article.comments %}
+            <h4 class="ui header">{{ article.source }}</h4>
               <div class="event">
                 <div class="content">
                   <div class="summary">
@@ -26,6 +27,7 @@
                 </div>
               </div>
             {% else %}
+            <h4 class="ui header">{{ article.source }}</h4>
               <div class="event">
                 <div class="content">
                   <div class="summary">
