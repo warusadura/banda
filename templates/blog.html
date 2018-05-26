@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
   <head>
-    <title>home</title>
+    <title>blogs | banda</title>
     <link href="{{ url_for('static', filename='semantic.min.css') }}"
     rel="stylesheet"/>
     <link href="{{ url_for('static', filename='styles.css') }}"
@@ -12,7 +12,15 @@
 
     <div class="ui text container">
       <br>
-      <a href="/setup" class="ui right floated button">setup</a>
+      <div class="ui buttons right floated">
+        <a href="/" class="ui right floated button">home</a>
+        <a href="/blogs" class="ui right floated button active">blogs</a>
+        <a href="/reddit" class="ui right floated button">reddit</a>
+        <a href="/events" class="ui right floated button">events</a>
+        <a href="https://github.com/dnuka/banda" 
+          class="ui right floated button">setup</a>
+      </div>
+
       <h1 class="ui dividing header">your blog pages</h1>
       
       

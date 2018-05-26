@@ -13,9 +13,17 @@ def banda_server():
     def index():
         return render_template("index.html", articles=pickup())
 
-    @app.route("/test")
-    def user():
-        return render_template("temp.html")
+    @app.route("/blogs")
+    def blog():
+        return render_template("blog.html")
+
+    @app.route("/events")
+    def events():
+        return render_template("event.html")
+
+    @app.route("/reddit")
+    def reddit():
+        return render_template("reddit.html")
 
     app.run(threaded=True)
 
