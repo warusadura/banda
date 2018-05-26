@@ -3,3 +3,4 @@ geckodriver.log
 __pycache__
 *swp
 temp.txt
+templates/temp.html
