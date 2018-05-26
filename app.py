@@ -5,6 +5,7 @@ from flask import Flask, render_template
 from selenium import webdriver
 from driver import getPath, profile
 from rss import pickup
+from reddit import pickup_reddit
 
 def banda_server():
     app = Flask(__name__)
@@ -23,7 +24,7 @@ def banda_server():
 
     @app.route("/reddit")
     def reddit():
-        return render_template("reddit.html")
+        return render_template("reddit.html", posts=pickup_reddit())
 
     app.run(threaded=True)
 
