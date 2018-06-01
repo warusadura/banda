@@ -18,12 +18,6 @@ def identify(url):
         return host.split(".")[1]
     return host.split(".")[0]
 
-def reddit():
-    # identify reddit rss feeds
-    # https://old.reddit.com/r/cscareerquestions+Python/hot/.rss
-    isreddit = False
- 
-
 def pickup():
     # create individual articles
     rss_data = []
