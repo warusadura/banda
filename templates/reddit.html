@@ -1,45 +1,24 @@
-<!DOCTYPE>
-<html>
-  <head>
-    <title>reddit | banda</title>
-    <link href="{{ url_for('static', filename='semantic.min.css') }}"
-    rel="stylesheet"/>
-    <link href="{{ url_for('static', filename='styles.css') }}"
-    rel="stylesheet"/>
-  </head>
+{% extends 'base.html' %}
 
-  <body>
+{% block content %}
+	<h1 class="ui dividing header">your subreddits</h1>
+		
+		<div class="ui small feed">
+			{% for post in posts %}
+				{% if loop.changed(post.category) %}
+					<h4 class="ui header">{{ post.category }}</h4>
+				{% endif %}
+				<div class="event">
+					<div class="content">
+						<div class="summary">
+							<a href="{{ post.link }}">
+								{{ post.title }}</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<br>
+	</div>
 
-    <div class="ui text container">
-      <br>
-      <div class="ui buttons right floated">
-        <a href="/" class="ui right floated button">home</a>
-        <a href="/blogs" class="ui right floated button">blogs</a>
-        <a href="/reddit" class="ui right floated button active">reddit</a>
-        <a href="/events" class="ui right floated button">events</a>
-        <a href="https://github.com/dnuka/banda" 
-          class="ui right floated button">setup</a>
-      </div>
-
-      <h1 class="ui dividing header">your subreddits</h1>
-      
-      <div class="ui small feed">
-        {% for post in posts %}
-          {% if loop.changed(post.category) %}
-            <h4 class="ui header">{{ post.category }}</h4>
-          {% endif %}
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <a href="{{ post.link }}">
-                  {{ post.title }}</a>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-      <br>
-    </div>
-
-  </body>
-</html>
+{% endblock %}

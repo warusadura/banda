@@ -1,44 +1,23 @@
-<!DOCTYPE>
-<html>
-  <head>
-    <title>events | banda</title>
-    <link href="{{ url_for('static', filename='semantic.min.css') }}"
-    rel="stylesheet"/>
-    <link href="{{ url_for('static', filename='styles.css') }}"
-    rel="stylesheet"/>
-  </head>
+{% extends 'base.html' %}
 
-  <body>
+{% block content %}
+	<h1 class="ui dividing header">your events</h1>
+		<div class="ui small feed">
+			{% for event in events %}
+				{% if loop.changed(event.source) %}
+					<h4 class="ui header">{{ event.source }}</h4>
+				{% endif %}
+				<div class="event">
+					<div class="content">
+						<div class="summary">
+							<a href="{{ event.link }}">
+								{{ event.title }}</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<br>
+	</div>
 
-    <div class="ui text container">
-      <br>
-      <div class="ui buttons right floated">
-        <a href="/" class="ui right floated button">home</a>
-        <a href="/blogs" class="ui right floated button">blogs</a>
-        <a href="/reddit" class="ui right floated button">reddit</a>
-        <a href="/events" class="ui right floated button active">events</a>
-        <a href="https://github.com/dnuka/banda" 
-          class="ui right floated button">setup</a>
-      </div>
-
-      <h1 class="ui dividing header">your events</h1>
-      <div class="ui small feed">
-        {% for event in events %}
-          {% if loop.changed(event.source) %}
-            <h4 class="ui header">{{ event.source }}</h4>
-          {% endif %}
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <a href="{{ event.link }}">
-                  {{ event.title }}</a>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-      <br>
-    </div>
-
-  </body>
-</html>
+{% endblock %}

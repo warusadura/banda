@@ -1,33 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-		<h1 class="ui dividing header">your feeds</h1>
-		<div class="ui small feed">
-			{% for article in articles %}
-				{% if loop.changed(article.source) %}
-						<h4 class="ui header">{{ article.source }}</h4>
-				{% endif %}
-				{% if article.comments %}
-						<div class="event">
-							<div class="content">
-								<div class="summary">
-									<a href="{{ article.comments }}">
-										{{ article.title }}</a>
-								</div>
+	<h1 class="ui dividing header">your feeds</h1>
+	<div class="ui small feed">
+		{% for article in articles %}
+			{% if loop.changed(article.source) %}
+					<h4 class="ui header">{{ article.source }}</h4>
+			{% endif %}
+			{% if article.comments %}
+					<div class="event">
+						<div class="content">
+							<div class="summary">
+								<a href="{{ article.comments }}">
+									{{ article.title }}</a>
 							</div>
 						</div>
-					{% else %}
-						<div class="event">
-							<div class="content">
-								<div class="summary">
-									<a href="{{ article.link }}">
-										{{ article.title }}</a>
-								</div>
-							<div>
-						</div>
-					{% endif %}
-			{% endfor %}
-		</div>
-		<br>
+					</div>
+				{% else %}
+					<div class="event">
+						<div class="content">
+							<div class="summary">
+								<a href="{{ article.link }}">
+									{{ article.title }}</a>
+							</div>
+						<div>
+					</div>
+				{% endif %}
+		{% endfor %}
+	</div>
+	<br>
 	</div>
 {% endblock %}
