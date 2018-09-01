@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>home | banda</title>
+    <link href="{{ url_for('static', filename='semantic.min.css') }}"
+    rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='styles.css') }}"
+    rel="stylesheet"/>
+  </head>
+
+  <body>
+
+    <div class="ui text container">
+      <br>
+      <div class="ui buttons right floated">
+        <a href="/" class="ui right floated button active">home</a>
+        <a href="/blogs" class="ui right floated button">blogs</a>
+        <a href="/reddit" class="ui right floated button">reddit</a>
+        <a href="/events" class="ui right floated button">events</a>
+        <a href="https://github.com/dnuka/banda" 
+          class="ui right floated button">setup</a>
+      </div>
+
+			{% block content %}
+
+			{% endblock %}
+
+	</body>
+</html>
