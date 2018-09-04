@@ -5,11 +5,11 @@ from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 
 feeds = [
-        "https://news.ycombinator.com/rss",
-        "https://www.wired.com/feed/category/security/latest/rss",
-        "https://hackernoon.com/feed",
-        "https://arstechnica.com/feed/",
-        ]
+	"https://news.ycombinator.com/rss",
+	"https://www.wired.com/feed/category/security/latest/rss",
+	"https://hackernoon.com/feed",
+	"https://arstechnica.com/feed/",
+]
 
 def identify(url):
     # identify rss source
