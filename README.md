@@ -4,7 +4,7 @@ a privacy-respecting, hackable, simple yet powerful rss reader.
 
 ## Installation
 Firstly you have to clone this repo into your local machine by following commands.
-`https://github.com/dnuka/banda.git `
+`git clone https://github.com/dnuka/banda.git `
 
 
 #### screenshots
