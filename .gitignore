@@ -2,3 +2,4 @@
 geckodriver.log
 __pycache__
 *swp
+.vscode
