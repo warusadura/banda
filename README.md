@@ -10,6 +10,10 @@ a privacy-respecting, hackable, simple yet powerful rss reader.
 
     `pip3 install -r requirements.txt`
 
+3) Run :code:`python app.py`
+
+4) Go to url address, in this case we use :code:`http://localhost:5000`
+
 
 #### screenshots
 
