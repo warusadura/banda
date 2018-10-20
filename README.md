@@ -2,6 +2,14 @@
 
 a privacy-respecting, hackable, simple yet powerful rss reader.
 
+#### Dependencies
+
+- Python > 3.5
+- Flask = 1.0.2
+- selenium = 3.12.0
+- beautifulsoup4
+- lxml = 4.2.1
+
 #### How to get started:
 
 1) Make sure you have Python v3.x installed on your machine. You can verify your python3 version using:
@@ -27,3 +35,5 @@ a privacy-respecting, hackable, simple yet powerful rss reader.
 
 ![](static/img/1.png)
 ![](static/img/2.png)
+
+
