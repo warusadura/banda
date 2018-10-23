@@ -35,5 +35,3 @@ a privacy-respecting, hackable, simple yet powerful rss reader.
 - selenium = 3.12.0
 - beautifulsoup4
 - lxml = 4.2.1
-
-
