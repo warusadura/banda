@@ -27,11 +27,3 @@ a privacy-respecting, hackable, simple yet powerful rss reader.
 
 ![](static/img/1.png)
 ![](static/img/2.png)
-
-#### Dependencies
-
-- Python > 3.5
-- Flask = 1.0.2
-- selenium = 3.12.0
-- beautifulsoup4
-- lxml = 4.2.1
