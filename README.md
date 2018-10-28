@@ -21,8 +21,6 @@ a privacy-respecting, hackable, simple yet powerful rss reader.
 % python app.py
 ```
 
-4) Navigate to http://localhost:5000 in your web browser
-
 #### screenshots
 
 ![](static/img/1.png)
