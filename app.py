@@ -37,11 +37,14 @@ def banda_ui():
     ui.get("http://localhost:5000")
 
 def main():
-    server_thread = Thread(target=banda_server)
-    ui_thread = Thread(target=banda_ui)
+    try:
+        server_thread = Thread(target=banda_server)
+        ui_thread = Thread(target=banda_ui)
 
-    server_thread.start()
-    ui_thread.start()
+        server_thread.start()
+        ui_thread.start()
+    except Exception as e:
+        print(e)
 
 if __name__ == "__main__":
     main()
