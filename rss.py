@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 feeds = [
 	"https://news.ycombinator.com/rss",
 	"https://www.wired.com/feed/category/security/latest/rss",
-	"https://hackernoon.com/feed",
 	"https://arstechnica.com/feed/",
 ]
 
