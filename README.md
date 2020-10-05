@@ -22,6 +22,8 @@ pip install -r requirements.txt
 python app.py
 ```
 
+4) Also, you may have to replace the existing geckodriver (included one is for Linux) according to your operating system. Visit https://github.com/mozilla/geckodriver/releases and pick one.
+
 ### contribute
 
 Found an issue? Post it in the [issue tracker](https://github.com/dnuka/banda/issues)
