@@ -27,6 +27,12 @@ def profile():
         "extensions.pocket.enabled": False,
         "dom.battery.enabled": False,
         "device.sensors.enabled": False,
+        "beacon.enabled": False,
+        "media.peerconnection.enabled": False,
+        "webgl.disabled": True,
+        "network.http.sendRefererHeader": 0,
+        "privacy.firstparty.isolate": True,
+        "network.cookie.lifetimePolicy": 2,
     })
 
     capabilities = DesiredCapabilities.FIREFOX.copy()
