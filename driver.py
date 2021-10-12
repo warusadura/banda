@@ -5,15 +5,18 @@ from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.firefox.options import Options, FirefoxProfile
 
+
 def getPath():
     return getcwd() + "/geckodriver"
+
 
 def profile():
     opts = Options()
     #opts.binary = binary
 
     #privacy protecting preferences
-    opts.preferences.update({"javascript.enabled": False,
+    opts.preferences.update({
+        "javascript.enabled": False,
         "browser.tabs.drawInTitlebar": True,
         "browser.privatebrowsing.autostart": True,
         "privacy.donottrackheader.enabled": True,
@@ -23,7 +26,8 @@ def profile():
         "media.autoplay.enabled": False,
         "extensions.pocket.enabled": False,
         "dom.battery.enabled": False,
-        "device.sensors.enabled": False,})
+        "device.sensors.enabled": False,
+    })
 
     capabilities = DesiredCapabilities.FIREFOX.copy()
     profile = webdriver.FirefoxProfile(getcwd() + "/profile")
