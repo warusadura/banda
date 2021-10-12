@@ -4,10 +4,11 @@ from urllib import request
 from bs4 import BeautifulSoup
 
 subreddits = [
-	"https://old.reddit.com/r/cscareerquestions/hot/.rss",
-	"https://www.reddit.com/r/Python/hot/.rss",
-	"https://old.reddit.com/r/programming/.rss",
+    "https://old.reddit.com/r/cscareerquestions/hot/.rss",
+    "https://www.reddit.com/r/Python/hot/.rss",
+    "https://old.reddit.com/r/programming/.rss",
 ]
+
 
 def pickup_reddit():
     reddit_data = []
@@ -25,10 +26,10 @@ def pickup_reddit():
     posts = []
     for single in raw_posts:
         post = {
-                "title": single.title.string,
-                "link": single.link["href"],
-                "category": single.category["term"]
-               }
+            "title": single.title.string,
+            "link": single.link["href"],
+            "category": single.category["term"]
+        }
         posts.append(post)
 
     return posts

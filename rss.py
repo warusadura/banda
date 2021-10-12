@@ -5,10 +5,11 @@ from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 
 feeds = [
-	"https://news.ycombinator.com/rss",
-	"https://www.wired.com/feed/category/security/latest/rss",
-	"https://arstechnica.com/feed/",
+    "https://news.ycombinator.com/rss",
+    "https://www.wired.com/feed/category/security/latest/rss",
+    "https://arstechnica.com/feed/",
 ]
+
 
 def identify(url):
     # identify rss source
@@ -16,6 +17,7 @@ def identify(url):
     if len(host.split(".")) == 3:
         return host.split(".")[1]
     return host.split(".")[0]
+
 
 def pickup():
     # create individual articles
@@ -41,9 +43,10 @@ def pickup():
             "title": article.title.string,
             "link": article.link.string,
             "comments": article.comments.string if state else None,
-            "source": "hackernews" if hackernews else
-            identify(article.link.string)
-            }
+            "source":
+            "hackernews" if hackernews else identify(article.link.string)
+        }
         articles.append(item)
-   # print(articles)
+
+# print(articles)
     return articles

@@ -1,11 +1,12 @@
 #! /usr/bin/env python3
- 
+
 from threading import Thread
 from flask import Flask, render_template
 from selenium import webdriver
 from driver import getPath, profile
 from rss import pickup
 from reddit import pickup_reddit
+
 
 def banda_server():
     app = Flask(__name__)
@@ -28,13 +29,15 @@ def banda_server():
 
     app.run(threaded=True)
 
+
 def banda_ui():
     ui = webdriver.Firefox(options=profile()[0],
-            capabilities=profile()[1],
-            firefox_profile=profile()[2],
-            executable_path=getPath())
+                           capabilities=profile()[1],
+                           firefox_profile=profile()[2],
+                           executable_path=getPath())
     #ui.refresh()
     ui.get("http://localhost:5000")
+
 
 def main():
     try:
@@ -45,6 +48,7 @@ def main():
         ui_thread.start()
     except Exception as e:
         print(e)
+
 
 if __name__ == "__main__":
     main()
