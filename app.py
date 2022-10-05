@@ -36,7 +36,6 @@ def banda_ui():
     service = Service(getPath())
     ui = webdriver.Firefox(options=profile()[0],
                            capabilities=profile()[1],
-                           firefox_profile=profile()[2],
                            service=service)
     #ui.refresh()
     ui.get("http://localhost:5000")
