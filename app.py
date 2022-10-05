@@ -3,6 +3,8 @@
 from threading import Thread
 from flask import Flask, render_template
 from selenium import webdriver
+from selenium.webdriver.firefox.service import Service
+
 from driver import getPath, profile
 from rss import pickup
 from reddit import pickup_reddit
@@ -31,10 +33,11 @@ def banda_server():
 
 
 def banda_ui():
+    service = Service(getPath())
     ui = webdriver.Firefox(options=profile()[0],
                            capabilities=profile()[1],
                            firefox_profile=profile()[2],
-                           executable_path=getPath())
+                           service=service)
     #ui.refresh()
     ui.get("http://localhost:5000")
 
